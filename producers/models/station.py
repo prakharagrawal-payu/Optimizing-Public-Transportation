@@ -20,10 +20,10 @@ class Station(Producer):
     #
     value_schema = avro.load(f"{Path(__file__).parents[0]}/schemas/arrival_value.json")
 
-    def __init__(self, station_id, name, color, direction_a=None, direction_b=None):
+    def __init__(self, station_id, station-name , name, color, direction_a=None, direction_b=None):
         self.name = name
         # TODO: Complete the below by deciding on a topic name, number of partitions, and number of replicas
-        topic_name = 'org.chicago.cta.station.arrivals.v1'  # TODO: Come up with a better topic name
+        topic_name = '{station-name}.arrival.v1'  # TODO: Come up with a better topic name
         super().__init__(
             topic_name,
             # TODO: value_schema=Station.value_schema, # TODO: Uncomment once schema is defined
